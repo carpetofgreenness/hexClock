@@ -10,10 +10,22 @@ window.setInterval(function(){
 	var hours = d.getHours();
 	var minutes = d.getMinutes();
 	var seconds = d.getSeconds();
+	console.log(hours + " " + minutes + " " + seconds)
+
+	//make all numbers 2 digits
+	function makeTwoDigits(num) {
+		if (num<10) {
+			num = "0"+num;
+		}
+		return num;
+	}
+	hours = makeTwoDigits(hours);
+	minutes = makeTwoDigits(minutes);
+	seconds = makeTwoDigits(seconds);
 
 	//create hex code
 	var hexString = "#"+hours+minutes+seconds;
-	// console.log(hexString);
+	console.log(hexString);
 
 	//should font be black or white?
 	var color = "";
@@ -26,11 +38,11 @@ window.setInterval(function(){
     	}
 	}
 	getContrast(hexString);
-	// console.log(color);
+	console.log(color);
 
 	//make style rule
 	var styleRule = "body { background-color: " + hexString + "; color: " + color +";}"
-	// console.log(styleRule);
+	console.log(styleRule);
 
 	sheet.insertRule(styleRule, 0);
 
