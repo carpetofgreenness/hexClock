@@ -11,5 +11,7 @@ var seconds = d.getSeconds();
 //create hex code
 var hexString = "#"+hours+minutes+seconds;
 console.log(hexString);
+var styleRule = "body { background-color: " + hexString + "; }"
+console.log(styleRule);
 
-sheet.insertRule("body { background-color: red; }", 1);
+sheet.insertRule(styleRule, 1);
