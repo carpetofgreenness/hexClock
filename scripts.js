@@ -10,7 +10,7 @@ window.setInterval(function(){
 	var hours = d.getHours();
 	var minutes = d.getMinutes();
 	var seconds = d.getSeconds();
-	console.log(hours + " " + minutes + " " + seconds)
+	// console.log(hours + " " + minutes + " " + seconds)
 
 	//make all numbers 2 digits
 	function makeTwoDigits(num) {
@@ -25,7 +25,7 @@ window.setInterval(function(){
 
 	//create hex code
 	var hexString = "#"+hours+minutes+seconds;
-	console.log(hexString);
+	// console.log(hexString);
 
 	//should font be black or white?
 	var color = "";
@@ -38,13 +38,11 @@ window.setInterval(function(){
     	}
 	}
 	getContrast(hexString);
-	console.log(color);
+	// console.log(color);
 
-	//make style rule
-	var styleRule = "body { background-color: " + hexString + "; color: " + color +";}"
-	console.log(styleRule);
-
-	sheet.insertRule(styleRule, 0);
+	//change body styles
+	document.body.style.backgroundColor=hexString;
+	document.body.style.color=color;
 
 	//change page text
 	document.getElementById("clock").innerText = hexString;
