@@ -13,7 +13,7 @@ window.setInterval(function(){
 
 	//create hex code
 	var hexString = "#"+hours+minutes+seconds;
-	console.log(hexString);
+	// console.log(hexString);
 
 	//should font be black or white?
 	var color = "";
@@ -26,11 +26,11 @@ window.setInterval(function(){
     	}
 	}
 	getContrast(hexString);
-	console.log(color);
+	// console.log(color);
 
 	//make style rule
 	var styleRule = "body { background-color: " + hexString + "; color: " + color +";}"
-	console.log(styleRule);
+	// console.log(styleRule);
 
 	sheet.insertRule(styleRule, 0);
 
